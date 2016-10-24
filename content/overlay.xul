@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<overlay id="PHPHelp" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/x-javascript" src="chrome://PHPHelp/content/overlay.js" />
+	
+	<commandset id="allcommands">
+		<command id="Tasks:ReplaceEnteties" oncommand="extensions.PHPHelp.replaceEnteties();"/>
+	</commandset>
+
+	<menupopup id="popup_tools">
+		<menu id="menu_PHPHelp" label="PHP Help">
+		<menupopup id="menu_HTMLt_popup">
+			<menuitem id="menu_HTMLt_file"
+					label="Replace HTML Entities in selection"
+					observes="Tasks:ReplaceEnteties"
+					class="menu-iconic-wide" />
+		</menupopup>
+		</menu>
+	</menupopup>
+	
+	<!--<ko-pane id="workspace_right_area">
+	<browser type="ko-widget" id="PHPHelpViewbox" label="PHP Help"
+			 position="10" insertbefore="codebrowserviewbox"
+			 tab_oncommand=""
+			 tab_onfocus=""
+			 src="chrome://PHPHelp/content/panel.xul"/>
+	</ko-pane>-->
+	
+</overlay>
+

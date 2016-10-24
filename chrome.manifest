@@ -1,0 +1,5 @@
+content PHPHelp content/
+overlay chrome://komodo/content/komodo.xul chrome://PHPHelp/content/overlay.xul
+overlay chrome://komodo/content/commandsOverlay.xul chrome://PHPHelp/content/commandsOverlay.xul
+#overlay chrome://komodo/content/pref/pref-html.xul chrome://PHPHelp/content/pref-overlay.xul
+skin PHPHelp classic/1.0 skin/

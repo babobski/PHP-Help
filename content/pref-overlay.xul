@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="less://komodo/skin/global/global.less" type="text/css"?>
+<?xml-stylesheet href="chrome://PHPHelp/skin/php-help.css" type="text/css"?>
+
+<prefwindow id="PHP-Help-prefs"
+	 title="PHP Help"
+	 xmlns:html="http://www.w3.org/1999/xhtml"
+	 width="300"
+	 height="200"
+	 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<prefpane id="PHPHelp-pane" label="PHP Help">
+		<preferences>
+			<preference id="pref_shorttags" name="extensions.PHPHelp.shorttags" type="string"/>
+		</preferences>
+		<html:h3>
+			Use php short-tags
+		</html:h3>
+		  
+		<hbox align="center">
+			<menulist id="shorttags" preference="pref_shorttags" label="Use php short tags">
+				<menupopup>
+					<menuitem value="yes" label="Yes, use php short-tags"/>
+					<menuitem value="no" label="No, dont use php short-tags"/>
+				</menupopup>
+			</menulist>
+		</hbox>
+	</prefpane>
+
+</prefwindow>
+
