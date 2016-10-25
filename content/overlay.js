@@ -25,20 +25,20 @@ if (typeof(extensions.PHPHelp) === 'undefined') extensions.PHPHelp = { version :
 			return false
 		}
 		
-		if (e.shiftKey && e.which == 191) {
-			var koDoc = ko.views.manager.currentView.document || ko.views.manager.currentView.koDoc,
+		if (e.shiftKey && e.which == 191 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+			var koDoc = currentView.document || currentView.koDoc,
 				language = koDoc.language,
 				useShortTags = prefs.getCharPref('shorttags');
 			
 			switch (language) {
 				case 'PHP':
-				case 'HTML':
-				case 'HTML5':
 					
 					try {
 						e.preventDefault();
 						e.stopPropagation();
 						e.stopImmediatePropagation();
+						
+						currentView.scimoz.beginUndoAction();
 						
 						if (scimoz.getWCharAt(scimoz.currentPos - 1).toString() === '<') {
 							if (currentView.scintilla.autocomplete.active) {
@@ -56,6 +56,8 @@ if (typeof(extensions.PHPHelp) === 'undefined') extensions.PHPHelp = { version :
 							scimoz.gotoPos(scimoz.currentPos + 1);
 						}
 						
+						currentView.scimoz.endUndoAction();
+						
 					} catch(e) {
 						alert(e);
 					}
@@ -63,14 +65,12 @@ if (typeof(extensions.PHPHelp) === 'undefined') extensions.PHPHelp = { version :
 			}
 		}
 		
-		if (e.shiftKey === false && e.which == 70) {
-			var koDoc = ko.views.manager.currentView.document || ko.views.manager.currentView.koDoc,
+		if (!e.shiftKey && e.which == 70 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+			var koDoc = currentView.document || currentView.koDoc,
 			language = koDoc.language;
 			
 			switch (language) {
 				case 'PHP':
-				case 'HTML':
-				case 'HTML5':
 					
 					try {
 						e.preventDefault();
@@ -78,6 +78,8 @@ if (typeof(extensions.PHPHelp) === 'undefined') extensions.PHPHelp = { version :
 						e.stopImmediatePropagation();
 						
 						var testString = scimoz. getTextRange((scimoz.currentPos - 2), scimoz.currentPos);
+						
+						currentView.scimoz.beginUndoAction();
 						
 						if (testString === '<i') {
 							if (currentView.scintilla.autocomplete.active) {
@@ -95,6 +97,7 @@ if (typeof(extensions.PHPHelp) === 'undefined') extensions.PHPHelp = { version :
 							scimoz.insertText(scimoz.currentPos, 'f');
 							scimoz.gotoPos(scimoz.currentPos + 1);
 						}
+						currentView.scimoz.endUndoAction();
 						
 					} catch(e) {
 						alert(e);
@@ -103,21 +106,21 @@ if (typeof(extensions.PHPHelp) === 'undefined') extensions.PHPHelp = { version :
 			}
 		}
 		
-		if (e.shiftKey === false && e.which == 76) {
-			var koDoc = ko.views.manager.currentView.document || ko.views.manager.currentView.koDoc,
+		if (!e.shiftKey && e.which == 76 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+			var koDoc = currentView.document || currentView.koDoc,
 			language = koDoc.language;
 			
 			switch (language) {
 				case 'PHP':
-				case 'HTML':
-				case 'HTML5':
 					
 					try {
 						e.preventDefault();
 						e.stopPropagation();
 						e.stopImmediatePropagation();
 						
-						var testString = scimoz. getTextRange((scimoz.currentPos - 2), scimoz.currentPos);
+						currentView.scimoz.beginUndoAction();
+						
+						var testString = scimoz.getTextRange((scimoz.currentPos - 2), scimoz.currentPos);
 						
 						if (testString === '<e') {
 							if (currentView.scintilla.autocomplete.active) {
@@ -135,6 +138,7 @@ if (typeof(extensions.PHPHelp) === 'undefined') extensions.PHPHelp = { version :
 							scimoz.insertText(scimoz.currentPos, 'l');
 							scimoz.gotoPos(scimoz.currentPos + 1);
 						}
+						currentView.scimoz.endUndoAction();
 						
 					} catch(e) {
 						alert(e);
@@ -143,19 +147,19 @@ if (typeof(extensions.PHPHelp) === 'undefined') extensions.PHPHelp = { version :
 			}
 		}
 		
-		if (e.shiftKey === false && e.which == 79) {
-			var koDoc = ko.views.manager.currentView.document || ko.views.manager.currentView.koDoc,
+		if (!e.shiftKey && e.which == 79 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+			var koDoc = currentView.document || currentView.koDoc,
 			language = koDoc.language;
 			
 			switch (language) {
 				case 'PHP':
-				case 'HTML':
-				case 'HTML5':
 					
 					try {
 						e.preventDefault();
 						e.stopPropagation();
 						e.stopImmediatePropagation();
+						
+						currentView.scimoz.beginUndoAction();
 						
 						var testString = scimoz. getTextRange((scimoz.currentPos - 2), scimoz.currentPos);
 						
@@ -175,6 +179,7 @@ if (typeof(extensions.PHPHelp) === 'undefined') extensions.PHPHelp = { version :
 							scimoz.insertText(scimoz.currentPos, 'o');
 							scimoz.gotoPos(scimoz.currentPos + 1);
 						}
+						currentView.scimoz.endUndoAction();
 						
 					} catch(e) {
 						alert(e);
