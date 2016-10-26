@@ -6,14 +6,15 @@ This addon will provide auto completion for common php tags.
 Also is there support for short-tags, this can be ebabled trough the settings.
 
 ### PHP tag
-```
+```php
 <?
 
 // Will expand to
 <?php[Tabstop] ?>
+```
 
 ### If tags
-```
+```php
 <if
 
 // Will expand to
@@ -23,7 +24,7 @@ Also is there support for short-tags, this can be ebabled trough the settings.
 ```
 
 ### If else tags
-```
+```php
 <el
 
 // Will expand to
@@ -35,7 +36,7 @@ Also is there support for short-tags, this can be ebabled trough the settings.
 ```
 
 ### Foreach tags
-```
+```php
 <fo
 
 // Will expand to
