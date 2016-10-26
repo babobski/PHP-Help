@@ -8,7 +8,7 @@
 
 	<menupopup id="popup_tools">
 		<menu id="menu_PHPHelp" label="PHP Help">
-		<menupopup id="menu_HTMLt_popup">
+		<menupopup id="menu_HTMLt_popup"> 
 			<menuitem id="menu_HTMLt_file"
 					label="Replace HTML Entities in selection"
 					observes="Tasks:ReplaceEnteties"

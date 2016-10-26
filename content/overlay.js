@@ -40,7 +40,7 @@ if (typeof(extensions.PHPHelp) === 'undefined') extensions.PHPHelp = { version :
 						
 						currentView.scimoz.beginUndoAction();
 						
-						if (scimoz.getWCharAt(scimoz.currentPos - 1).toString() === '<') {
+						if (scimoz.currentPos > 0 && scimoz.getWCharAt(scimoz.currentPos - 1).toString() === '<') {
 							if (currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
@@ -77,11 +77,11 @@ if (typeof(extensions.PHPHelp) === 'undefined') extensions.PHPHelp = { version :
 						e.stopPropagation();
 						e.stopImmediatePropagation();
 						
-						var testString = scimoz. getTextRange((scimoz.currentPos - 2), scimoz.currentPos);
+						var testString = scimoz.currentPos > 1 ? scimoz. getTextRange((scimoz.currentPos - 2), scimoz.currentPos) : false;
 						
 						currentView.scimoz.beginUndoAction();
 						
-						if (testString === '<i') {
+						if (testString && testString === '<i') {
 							if (currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
@@ -120,9 +120,9 @@ if (typeof(extensions.PHPHelp) === 'undefined') extensions.PHPHelp = { version :
 						
 						currentView.scimoz.beginUndoAction();
 						
-						var testString = scimoz.getTextRange((scimoz.currentPos - 2), scimoz.currentPos);
+						var testString = scimoz.currentPos > 1 ?scimoz.getTextRange((scimoz.currentPos - 2), scimoz.currentPos) : false;
 						
-						if (testString === '<e') {
+						if (testString && testString === '<e') {
 							if (currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
@@ -161,9 +161,9 @@ if (typeof(extensions.PHPHelp) === 'undefined') extensions.PHPHelp = { version :
 						
 						currentView.scimoz.beginUndoAction();
 						
-						var testString = scimoz. getTextRange((scimoz.currentPos - 2), scimoz.currentPos);
+						var testString = scimoz.currentPos > 1 ? scimoz.getTextRange((scimoz.currentPos - 2), scimoz.currentPos) : false;
 						
-						if (testString === '<f') {
+						if (testString && testString === '<f') {
 							if (currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
