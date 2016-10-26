@@ -2,12 +2,12 @@
  * Namespaces
  */
 if (typeof(extensions) === 'undefined') extensions = {};
-if (typeof(extensions.PHPHelp) === 'undefined') extensions.PHPHelp = { version : '1.0' };
+if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = { version : '1.0' };
 
 (function() {
 	var self = this,
 		prefs = Components.classes["@mozilla.org/preferences-service;1"]
-		.getService(Components.interfaces.nsIPrefService).getBranch("extensions.PHPHelp."),
+		.getService(Components.interfaces.nsIPrefService).getBranch("extensions.PHPTags."),
 		editor_pane = ko.views.manager.topView;
 		
 	editor_pane.removeEventListener('keydown', self._autoCompleteTag, true);
@@ -192,5 +192,5 @@ if (typeof(extensions.PHPHelp) === 'undefined') extensions.PHPHelp = { version :
 	
 	editor_pane.addEventListener('keydown', self._autoCompleteTag, true);
 	
-}).apply(extensions.PHPHelp);
+}).apply(extensions.PHPTags);
 

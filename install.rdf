@@ -3,15 +3,15 @@
 	 xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	<Description about="urn:mozilla:install-manifest">
 <em:unpack>true</em:unpack>
-		<em:id>PHPHelp@babobski.com</em:id>
-		<em:name>PHP Help</em:name>
+		<em:id>PHPTags@babobski.com</em:id>
+		<em:name>PHP Tags</em:name>
 		<em:version>1.0</em:version>
-		<em:description>PHP Help functions</em:description>
+		<em:description>PHP Tags autocompletion</em:description>
 		<em:creator>Bob de Haas</em:creator>
 		<em:homepageURL></em:homepageURL>
 		<em:type>2</em:type> <!-- type=extension -->
 
-		<em:optionsURL>chrome://PHPHelp/content/pref-overlay.xul</em:optionsURL>
+		<em:optionsURL>chrome://PHPTags/content/pref-overlay.xul</em:optionsURL>
 
 		<em:targetApplication>
 			<Description>

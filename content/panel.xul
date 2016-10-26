@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://komodo/skin/" type="text/css"?>
 <?xml-stylesheet href="less://komodo/skin/global/global.less" type="text/css"?>
-<?xml-stylesheet href="chrome://PHPHelp/skin/php-help.css" type="text/css"?>
+<?xml-stylesheet href="chrome://PHPTags/skin/PHP-Tags.css" type="text/css"?>
 
 <!-- ***** BEGIN LICENSE BLOCK *****
 - Version: MPL 1.1/GPL 2.0/LGPL 2.1
@@ -40,7 +40,7 @@
 - ***** END LICENSE BLOCK ***** -->
 
 <page xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-	<script type="application/x-javascript" src="chrome://PHPHelp/content/overlay.js" />
+	<script type="application/x-javascript" src="chrome://PHPTags/content/overlay.js" />
 	
 	<hbox flex="1">
 		

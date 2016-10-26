@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<overlay id="PHPHelp" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-	<script type="application/x-javascript" src="chrome://PHPHelp/content/overlay.js" />
+<overlay id="PHPTags" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/x-javascript" src="chrome://PHPTags/content/overlay.js" />
 	
 	<commandset id="allcommands">
-		<command id="Tasks:ReplaceEnteties" oncommand="extensions.PHPHelp.replaceEnteties();"/>
+		<command id="Tasks:ReplaceEnteties" oncommand="extensions.PHPTags.replaceEnteties();"/>
 	</commandset>
 
 	<menupopup id="popup_tools">
@@ -22,7 +22,7 @@
 			 position="10" insertbefore="codebrowserviewbox"
 			 tab_oncommand=""
 			 tab_onfocus=""
-			 src="chrome://PHPHelp/content/panel.xul"/>
+			 src="chrome://PHPTags/content/panel.xul"/>
 	</ko-pane>-->
 	
 </overlay>
