@@ -29,6 +29,10 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = { version :
 			var koDoc = currentView.document || currentView.koDoc,
 				language = koDoc.language,
 				useShortTags = prefs.getCharPref('shorttags');
+				
+			if (scimoz.selText.length > 0) {
+				return false;
+			}
 			
 			switch (language) {
 				case 'PHP':
@@ -68,6 +72,10 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = { version :
 		if (!e.shiftKey && e.which == 70 && !e.ctrlKey && !e.altKey && !e.metaKey) {
 			var koDoc = currentView.document || currentView.koDoc,
 			language = koDoc.language;
+			
+			if (scimoz.selText.length > 0) {
+				return false;
+			}
 			
 			switch (language) {
 				case 'PHP':
@@ -110,6 +118,10 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = { version :
 			var koDoc = currentView.document || currentView.koDoc,
 			language = koDoc.language;
 			
+			if (scimoz.selText.length > 0) {
+				return false;
+			}
+			
 			switch (language) {
 				case 'PHP':
 					
@@ -150,6 +162,10 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = { version :
 		if (!e.shiftKey && e.which == 79 && !e.ctrlKey && !e.altKey && !e.metaKey) {
 			var koDoc = currentView.document || currentView.koDoc,
 			language = koDoc.language;
+			
+			if (scimoz.selText.length > 0) {
+				return false;
+			}
 			
 			switch (language) {
 				case 'PHP':

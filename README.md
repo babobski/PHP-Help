@@ -10,7 +10,7 @@ Also is there support for short-tags, this can be ebabled trough the settings.
 <?
 
 // Will expand to
-<?php[Tabstop] ?>
+<?php [Tabstop] ?>
 ```
 
 ### If tags
