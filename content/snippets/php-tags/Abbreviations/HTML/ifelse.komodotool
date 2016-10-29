@@ -1,0 +1,18 @@
+{
+  "keyboard_shortcut": "", 
+  "name": "ifelse", 
+  "value": [
+    "<?php if([[%tabstop:]]): ?>", 
+    "\t[[%tabstop:]]", 
+    "<?php else: ?>", 
+    "\t[[%tabstop:]]", 
+    "<?php!@#_currentPos!@#_anchor endif; ?>[[%tabstop:]]"
+  ], 
+  "set_selection": "true", 
+  "version": "1.0.12", 
+  "indent_relative": "true", 
+  "icon": "chrome://komodo/skin/images/snippet.png", 
+  "type": "snippet", 
+  "treat_as_ejs": "true", 
+  "auto_abbreviation": "true"
+}

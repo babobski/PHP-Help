@@ -1,0 +1,14 @@
+{
+  "keyboard_shortcut": "", 
+  "name": "print", 
+  "value": [
+    "<?php echo '<pre>' . print_r(!@#_currentPos!@#_anchor, true) . '</pre>'; ?>"
+  ], 
+  "set_selection": "true", 
+  "version": "1.0.12", 
+  "indent_relative": "true", 
+  "icon": "chrome://komodo/skin/images/snippet.png", 
+  "type": "snippet", 
+  "treat_as_ejs": "true", 
+  "auto_abbreviation": "true"
+}
