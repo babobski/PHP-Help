@@ -424,6 +424,12 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 					"chrome",data);
 	}
 	
+	this.openCheatsheet = function() {
+		var features = 'chrome,alwaysRaised=yes,resizable=yes';
+		
+		window.open('chrome://PHPTags/content/cheatsheet.xul', 'cheatsheet', features);
+	}
+	
 	this.openSnippetsPage = function(){
 		ko.browse.openUrlInDefaultBrowser('https://github.com/babobski/PHP-Tatgs-Snippets');
 	}

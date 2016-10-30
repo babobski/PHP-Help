@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="less://komodo/skin/global/global.less" type="text/css"?>
+
+<window
+	id="cheatsheet-window"
+	title="Cheat Sheet PHP tags"
+	orient="horizontal"
+	width="260"
+	height="280"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<tree flex="1" hidecolumnpicker="true">
+
+	<treecols>
+	<treecol id="snippet" label="Snippet" flex="1"/>
+	<treecol id="tag" label="PHP tags" flex="2"/>
+	</treecols>
+
+	<treechildren>
+	<treeitem>
+		<treerow>
+		<treecell label="&lt;?"/>
+		<treecell label="Basic php tag"/>
+		</treerow>
+	</treeitem>
+	<treeitem>
+		<treerow>
+		<treecell label="&lt;ec"/>
+		<treecell label="Echo tag"/>
+		</treerow>
+	</treeitem>
+	<treeitem>
+		<treerow>
+		<treecell label="&lt;if"/>
+		<treecell label="If tag"/>
+		</treerow>
+	</treeitem>
+	<treeitem>
+		<treerow>
+		<treecell label="&lt;el"/>
+		<treecell label="Else tag"/>
+		</treerow>
+	</treeitem>
+	<treeitem>
+		<treerow>
+		<treecell label="&lt;il"/>
+		<treecell label="If-Else tag"/>
+		</treerow>
+	</treeitem>
+	<treeitem>
+		<treerow>
+		<treecell label="&lt;fo"/>
+		<treecell label="Foreach tag"/>
+		</treerow>
+	</treeitem>
+	<treeitem>
+		<treerow>
+		<treecell label="&lt;sw"/>
+		<treecell label="Switch tag"/>
+		</treerow>
+	</treeitem>
+	<treeitem>
+		<treerow>
+		<treecell label="&lt;ca"/>
+		<treecell label="Case tag"/>
+		</treerow>
+	</treeitem>
+	<treeitem>
+		<treerow>
+		<treecell label="&lt;pr"/>
+		<treecell label="Print tag"/>
+		</treerow>
+	</treeitem>
+	</treechildren>
+
+</tree>
+	
+
+</window>

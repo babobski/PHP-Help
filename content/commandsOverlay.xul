@@ -8,11 +8,11 @@
 		 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 		 
 	 <broadcasterset id="broadcasterset_global">
-		<broadcaster
+		<!--<broadcaster
 		id="cmd_HTMLtoolbox_insert_image_path"
 		key="key_cmd_HTMLtoolbox_insert_image_path"
 		desc="HTML toolbox: Insert image path"
-		oncommand="insertImagePath();"/>
+		oncommand="insertImagePath();"/>-->
 	
 	 </broadcasterset>
 

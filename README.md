@@ -95,7 +95,7 @@ To insert a case tag, type `<ca` and the following snippet will be inserted:
 ![preview](case-tag.gif)
 
 ### Print tag 
-To insert a case tag, type `<pr` and the following snippet will be inserted:
+To insert a print tag, type `<pr` and the following snippet will be inserted:
 ```php
 // <pr Will expand to
 <?php echo '<pre>' . print_r([tabstop], true) . '</pre>'; ?>

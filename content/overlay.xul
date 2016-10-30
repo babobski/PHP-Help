@@ -3,27 +3,19 @@
 	<script type="application/x-javascript" src="chrome://PHPTags/content/overlay.js" />
 	
 	<commandset id="allcommands">
-		<command id="Tasks:ReplaceEnteties" oncommand="extensions.PHPTags.replaceEnteties();"/>
+		<command id="Tasks:OpenCheatsheet" oncommand="extensions.PHPTags.openCheatsheet();"/>
 	</commandset>
 
 	<menupopup id="popup_tools">
-		<menu id="menu_PHPHelp" label="PHP Help">
-		<menupopup id="menu_HTMLt_popup"> 
-			<menuitem id="menu_HTMLt_file"
-					label="Replace HTML Entities in selection"
-					observes="Tasks:ReplaceEnteties"
+		<menu id="menu_PHPTags" label="PHP Tags">
+		<menupopup id="menu_tags_popup"> 
+			<menuitem id="menu_tags_file"
+					label="Open Cheatsheet"
+					observes="Tasks:OpenCheatsheet"
 					class="menu-iconic-wide" />
 		</menupopup>
 		</menu>
 	</menupopup>
-	
-	<!--<ko-pane id="workspace_right_area">
-	<browser type="ko-widget" id="PHPHelpViewbox" label="PHP Help"
-			 position="10" insertbefore="codebrowserviewbox"
-			 tab_oncommand=""
-			 tab_onfocus=""
-			 src="chrome://PHPTags/content/panel.xul"/>
-	</ko-pane>-->
 	
 </overlay>
 
