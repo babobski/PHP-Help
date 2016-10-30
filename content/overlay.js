@@ -107,7 +107,7 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 								scimoz.gotoPos(scimoz.currentPos + 10);
 							}
 						} else {
-							scimoz.insertText(scimoz.currentPos, '?');
+							scimoz.insertText(scimoz.currentPos, 'c');
 							scimoz.gotoPos(scimoz.currentPos + 1);
 						}
 
@@ -262,6 +262,147 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 							}
 						} else {
 							scimoz.insertText(scimoz.currentPos, 'o');
+							scimoz.gotoPos(scimoz.currentPos + 1);
+						}
+						currentView.scimoz.endUndoAction();
+
+					} catch (e) {
+						alert(e);
+					}
+					break;
+			}
+		}
+		
+		// switch <sw
+		if (!e.shiftKey && e.which == 87 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+			var koDoc = currentView.document || currentView.koDoc,
+				language = koDoc.language
+				useShortTags = prefs.getCharPref('shorttags');
+
+			if (scimoz.selText.length > 0) {
+				return false;
+			}
+
+			switch (language) {
+				case 'PHP':
+
+					try {
+						e.preventDefault();
+						e.stopPropagation();
+						e.stopImmediatePropagation();
+
+						currentView.scimoz.beginUndoAction();
+
+						var testString = scimoz.currentPos > 1 ? scimoz.getTextRange((scimoz.currentPos - 2), scimoz.currentPos) : false;
+
+						if (testString && testString === '<s') {
+							if (currentView.scintilla.autocomplete.active) {
+								currentView.scintilla.autocomplete.close();
+							}
+							scimoz.deleteBackNotLine();
+							scimoz.deleteBackNotLine();
+							var snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('switch_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('switch', 'HTML', 'HTML');
+							if (snippet !== null) {
+								ko.abbrev.insertAbbrevSnippet(snippet);
+							} else {
+								self.openDialog();
+							}
+						} else {
+							scimoz.insertText(scimoz.currentPos, 'w');
+							scimoz.gotoPos(scimoz.currentPos + 1);
+						}
+						currentView.scimoz.endUndoAction();
+
+					} catch (e) {
+						alert(e);
+					}
+					break;
+			}
+		}
+		
+		// case <ca
+		if (!e.shiftKey && e.which == 65 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+			var koDoc = currentView.document || currentView.koDoc,
+				language = koDoc.language
+				useShortTags = prefs.getCharPref('shorttags');
+
+			if (scimoz.selText.length > 0) {
+				return false;
+			}
+
+			switch (language) {
+				case 'PHP':
+
+					try {
+						e.preventDefault();
+						e.stopPropagation();
+						e.stopImmediatePropagation();
+
+						currentView.scimoz.beginUndoAction();
+
+						var testString = scimoz.currentPos > 1 ? scimoz.getTextRange((scimoz.currentPos - 2), scimoz.currentPos) : false;
+
+						if (testString && testString === '<c') {
+							if (currentView.scintilla.autocomplete.active) {
+								currentView.scintilla.autocomplete.close();
+							}
+							scimoz.deleteBackNotLine();
+							scimoz.deleteBackNotLine();
+							var snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('case_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('case', 'HTML', 'HTML');
+							if (snippet !== null) {
+								ko.abbrev.insertAbbrevSnippet(snippet);
+							} else {
+								self.openDialog();
+							}
+						} else {
+							scimoz.insertText(scimoz.currentPos, 'w');
+							scimoz.gotoPos(scimoz.currentPos + 1);
+						}
+						currentView.scimoz.endUndoAction();
+
+					} catch (e) {
+						alert(e);
+					}
+					break;
+			}
+		}
+		
+		// print <pr
+		if (!e.shiftKey && e.which == 82 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+			var koDoc = currentView.document || currentView.koDoc,
+				language = koDoc.language
+				useShortTags = prefs.getCharPref('shorttags');
+
+			if (scimoz.selText.length > 0) {
+				return false;
+			}
+
+			switch (language) {
+				case 'PHP':
+
+					try {
+						e.preventDefault();
+						e.stopPropagation();
+						e.stopImmediatePropagation();
+
+						currentView.scimoz.beginUndoAction();
+
+						var testString = scimoz.currentPos > 1 ? scimoz.getTextRange((scimoz.currentPos - 2), scimoz.currentPos) : false;
+
+						if (testString && testString === '<p') {
+							if (currentView.scintilla.autocomplete.active) {
+								currentView.scintilla.autocomplete.close();
+							}
+							scimoz.deleteBackNotLine();
+							scimoz.deleteBackNotLine();
+							var snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('print_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('print', 'HTML', 'HTML');
+							if (snippet !== null) {
+								ko.abbrev.insertAbbrevSnippet(snippet);
+							} else {
+								self.openDialog();
+							}
+						} else {
+							scimoz.insertText(scimoz.currentPos, 'r');
 							scimoz.gotoPos(scimoz.currentPos + 1);
 						}
 						currentView.scimoz.endUndoAction();
