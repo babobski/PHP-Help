@@ -16,9 +16,9 @@ This addon will provide auto completion for common php tags.
 Also is there support for short-tags, this can be ebabled trough the settings.
 
 ### PHP tag
-```php
-<?
+To instert a default php tag, type `<?` and the following snipet will be inserted:
 
+```php
 // Will expand to
 <?php [Tabstop] ?>
 ```
