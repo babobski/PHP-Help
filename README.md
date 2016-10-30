@@ -22,6 +22,7 @@ Also is there support for short-tags, this can be ebabled trough the settings.
 // Will expand to
 <?php [Tabstop] ?>
 ```
+![preview](php-tag.gif)
 
 ### echo tag
 ```php
@@ -30,6 +31,7 @@ Also is there support for short-tags, this can be ebabled trough the settings.
 // Will expand to
 <?php echo [Tabstop] ?>
 ```
+![preview](echo-tag.gif)
 
 ### If tags
 ```php
@@ -40,6 +42,7 @@ Also is there support for short-tags, this can be ebabled trough the settings.
 	// [Tabstop]
 <?php endif; ?>
 ```
+![preview](if-tag.gif)
 
 ### else tags
 ```php
@@ -48,6 +51,7 @@ Also is there support for short-tags, this can be ebabled trough the settings.
 // Will expand to
 <?php else: ?>
 ```
+![preview](esle-tag.gif)
 
 ### If else tags
 ```php
@@ -60,6 +64,7 @@ Also is there support for short-tags, this can be ebabled trough the settings.
 	// [Tabstop]
 <?php endif; ?>
 ```
+![preview](if-else-tag.gif)
 
 ### Foreach tags
 ```php
@@ -70,3 +75,4 @@ Also is there support for short-tags, this can be ebabled trough the settings.
 	// [Tabstop]
 <?php endforeach; ?>
 ```
+![preview](foreach-tag.gif)
