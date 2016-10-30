@@ -1,6 +1,16 @@
 # PHP-Tags
 PHP tag autocompletion
 
+## Installation
+ * Installing required snippets
+ * Installing addon
+ * Configure Short Tags (optional)
+
+**Installing required snippets**  
+For the autocompletion to work, you need to install snippets. 
+You can adjust the snippets to needs (Indentation, etc.).  
+The snippets can be found [here](https://github.com/babobski/PHP-Tags-Snippets).
+
 ## Autocompletions
 This addon will provide auto completion for common php tags.  
 Also is there support for short-tags, this can be ebabled trough the settings.
@@ -13,6 +23,14 @@ Also is there support for short-tags, this can be ebabled trough the settings.
 <?php [Tabstop] ?>
 ```
 
+### echo tag
+```php
+<?
+
+// Will expand to
+<?php echo [Tabstop] ?>
+```
+
 ### If tags
 ```php
 <if
@@ -23,9 +41,17 @@ Also is there support for short-tags, this can be ebabled trough the settings.
 <?php endif; ?>
 ```
 
-### If else tags
+### else tags
 ```php
 <el
+
+// Will expand to
+<?php else: ?>
+```
+
+### If else tags
+```php
+<il
 
 // Will expand to
 <?php if([Tabstop]): ?>
