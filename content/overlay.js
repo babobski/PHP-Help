@@ -24,8 +24,12 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 
 		var scimoz = currentView.scimoz;
 
-		if (!scimoz) {
-			return false
+		if ( !scimoz || ! scimoz.focus) {
+			return false;
+		}
+		
+		if (ko.keybindings.manager.inPrefixCapture) {
+			return false;
 		}
 
 		// Basic PHP Tags <?
@@ -425,7 +429,7 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 	}
 	
 	this.openCheatsheet = function() {
-		var features = 'chrome,alwaysRaised=yes,resizable=yes';
+		var features = 'chrome,alwaysRaised=yes,centerscreen=true,resizable=yes';
 		
 		window.open('chrome://PHPTags/content/cheatsheet.xul', 'cheatsheet', features);
 	}
