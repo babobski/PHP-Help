@@ -359,7 +359,7 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 								self.openDialog();
 							}
 						} else {
-							scimoz.insertText(scimoz.currentPos, 'w');
+							scimoz.insertText(scimoz.currentPos, 'a');
 							scimoz.gotoPos(scimoz.currentPos + 1);
 						}
 						currentView.scimoz.endUndoAction();
