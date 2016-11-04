@@ -104,7 +104,7 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 							}
 							scimoz.deleteBackNotLine();
 							if (useShortTags === 'yes') {
-								scimoz.insertText(scimoz.currentPos, '?= ?>');
+								scimoz.insertText(scimoz.currentPos, '?=  ?>');
 								scimoz.gotoPos(scimoz.currentPos + 3);
 							} else {
 								scimoz.insertText(scimoz.currentPos, '?php echo  ?>');
