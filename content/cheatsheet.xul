@@ -44,6 +44,12 @@
 	</treeitem>
 	<treeitem>
 		<treerow>
+		<treecell label="&lt;ei"/>
+		<treecell label="Else if tag"/>
+		</treerow>
+	</treeitem>
+	<treeitem>
+		<treerow>
 		<treecell label="&lt;il"/>
 		<treecell label="If-Else tag"/>
 		</treerow>

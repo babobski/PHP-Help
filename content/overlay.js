@@ -170,6 +170,53 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 					break;
 			}
 		}
+		
+		// Else if Statement <ei
+		if (!e.shiftKey && e.which == 73 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+			var koDoc = currentView.document || currentView.koDoc,
+				language = koDoc.language,
+				useShortTags = prefs.getCharPref('shorttags');
+
+			if (scimoz.selText.length > 0) {
+				return false;
+			}
+
+			switch (language) {
+				case 'PHP':
+
+					try {
+						e.preventDefault();
+						e.stopPropagation();
+						e.stopImmediatePropagation();
+
+						var testString = scimoz.currentPos > 1 ? scimoz.getTextRange((scimoz.currentPos - 2), scimoz.currentPos) : false;
+
+						currentView.scimoz.beginUndoAction();
+
+						if (testString && testString === '<e') {
+							if (currentView.scintilla.autocomplete.active) {
+								currentView.scintilla.autocomplete.close();
+							}
+							scimoz.deleteBackNotLine();
+							scimoz.deleteBackNotLine();
+							var snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('elseif_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('elseif', 'HTML', 'HTML');
+							if (snippet !== null) {
+								ko.abbrev.insertAbbrevSnippet(snippet);
+							} else {
+								self.openDialog();
+							}
+						} else {
+							scimoz.insertText(scimoz.currentPos, 'i');
+							scimoz.gotoPos(scimoz.currentPos + 1);
+						}
+						currentView.scimoz.endUndoAction();
+
+					} catch (e) {
+						alert(e);
+					}
+					break;
+			}
+		}
 
 		// Else Tag <el / If Esle Statement <il
 		if (!e.shiftKey && e.which == 76 && !e.ctrlKey && !e.altKey && !e.metaKey) {
