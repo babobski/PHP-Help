@@ -28,6 +28,10 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 			return false;
 		}
 		
+		if (scimoz.selections > 1) {
+			return false;
+		}
+		
 		if (ko.keybindings.manager.inPrefixCapture) {
 			return false;
 		}
