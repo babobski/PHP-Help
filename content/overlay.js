@@ -44,13 +44,12 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 				case 'PHP':
 
 					try {
-						e.preventDefault();
-						e.stopPropagation();
-						e.stopImmediatePropagation();
-
-						currentView.scimoz.beginUndoAction();
 
 						if (scimoz.currentPos > 0 && scimoz.getWCharAt(scimoz.currentPos - 1).toString() === '<') {
+							e.preventDefault();
+							e.stopPropagation();
+							e.stopImmediatePropagation();
+							currentView.scimoz.beginUndoAction();
 							if (currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
@@ -61,12 +60,10 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 								scimoz.insertText(scimoz.currentPos, '?php  ?>');
 								scimoz.gotoPos(scimoz.currentPos + 5);
 							}
-						} else {
-							scimoz.insertText(scimoz.currentPos, '?');
-							scimoz.gotoPos(scimoz.currentPos + 1);
-						}
+							currentView.scimoz.endUndoAction();
+						} 
 
-						currentView.scimoz.endUndoAction();
+						return false;
 
 					} catch (e) {
 						alert(e);
@@ -82,14 +79,13 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 				case 'PHP':
 
 					try {
-						e.preventDefault();
-						e.stopPropagation();
-						e.stopImmediatePropagation();
-
-						currentView.scimoz.beginUndoAction();
+						
 						var testString = scimoz.currentPos > 1 ? scimoz.getTextRange((scimoz.currentPos - 2), scimoz.currentPos) : false;
 
 						if (testString && testString === '<e') {
+							e.preventDefault();
+							e.stopPropagation();
+							e.stopImmediatePropagation();
 							if (currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
@@ -101,12 +97,9 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 								scimoz.insertText(scimoz.currentPos, '?php echo  ?>');
 								scimoz.gotoPos(scimoz.currentPos + 10);
 							}
-						} else {
-							scimoz.insertText(scimoz.currentPos, 'c');
-							scimoz.gotoPos(scimoz.currentPos + 1);
 						}
-
-						currentView.scimoz.endUndoAction();
+						
+						return false;
 
 					} catch (e) {
 						alert(e);
@@ -123,15 +116,13 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 				case 'JavaScript':
 
 					try {
-						e.preventDefault();
-						e.stopPropagation();
-						e.stopImmediatePropagation();
 
 						var testString = scimoz.currentPos > 1 ? scimoz.getTextRange((scimoz.currentPos - 2), scimoz.currentPos) : false;
 
-						currentView.scimoz.beginUndoAction();
-
 						if (testString && testString === '<i') {
+							e.preventDefault();
+							e.stopPropagation();
+							e.stopImmediatePropagation();
 							if (currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
@@ -156,11 +147,9 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 							} else {
 								self.openDialog();
 							}
-						} else {
-							scimoz.insertText(scimoz.currentPos, 'f');
-							scimoz.gotoPos(scimoz.currentPos + 1);
 						}
-						currentView.scimoz.endUndoAction();
+						
+						return false;
 
 					} catch (e) {
 						alert(e);
@@ -177,15 +166,13 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 				case 'JavaScript':
 
 					try {
-						e.preventDefault();
-						e.stopPropagation();
-						e.stopImmediatePropagation();
-
+						
 						var testString = scimoz.currentPos > 1 ? scimoz.getTextRange((scimoz.currentPos - 2), scimoz.currentPos) : false;
 
-						currentView.scimoz.beginUndoAction();
-
 						if (testString && testString === '<e') {
+							e.preventDefault();
+							e.stopPropagation();
+							e.stopImmediatePropagation();
 							if (currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
@@ -209,11 +196,9 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 							} else {
 								self.openDialog();
 							}
-						} else {
-							scimoz.insertText(scimoz.currentPos, 'i');
-							scimoz.gotoPos(scimoz.currentPos + 1);
 						}
-						currentView.scimoz.endUndoAction();
+						
+						return false;
 
 					} catch (e) {
 						alert(e);
@@ -230,15 +215,13 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 				case 'JavaScript':
 
 					try {
-						e.preventDefault();
-						e.stopPropagation();
-						e.stopImmediatePropagation();
-
-						currentView.scimoz.beginUndoAction();
 
 						var testString = scimoz.currentPos > 1 ? scimoz.getTextRange((scimoz.currentPos - 2), scimoz.currentPos) : false;
 
 						if (testString && testString === '<e') {
+							e.preventDefault();
+							e.stopPropagation();
+							e.stopImmediatePropagation();
 							if (currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
@@ -263,6 +246,9 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 								self.openDialog();
 							}
 						} else if (testString && testString === '<i') {
+							e.preventDefault();
+							e.stopPropagation();
+							e.stopImmediatePropagation();
 							if (currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
@@ -274,11 +260,9 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 							} else {
 								self.openDialog();
 							}
-						} else {
-							scimoz.insertText(scimoz.currentPos, 'l');
-							scimoz.gotoPos(scimoz.currentPos + 1);
 						}
-						currentView.scimoz.endUndoAction();
+						
+						return false;
 
 					} catch (e) {
 						alert(e);
@@ -295,15 +279,13 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 				case 'JavaScript':
 
 					try {
-						e.preventDefault();
-						e.stopPropagation();
-						e.stopImmediatePropagation();
-
-						currentView.scimoz.beginUndoAction();
-
+						
 						var testString = scimoz.currentPos > 1 ? scimoz.getTextRange((scimoz.currentPos - 2), scimoz.currentPos) : false;
 
 						if (testString && testString === '<f') {
+							e.preventDefault();
+							e.stopPropagation();
+							e.stopImmediatePropagation();
 							if (currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
@@ -327,11 +309,9 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 							} else {
 								self.openDialog();
 							}
-						} else {
-							scimoz.insertText(scimoz.currentPos, 'o');
-							scimoz.gotoPos(scimoz.currentPos + 1);
 						}
-						currentView.scimoz.endUndoAction();
+						
+						return false;
 
 					} catch (e) {
 						alert(e);
@@ -348,15 +328,13 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 				case 'JavaScript':
 
 					try {
-						e.preventDefault();
-						e.stopPropagation();
-						e.stopImmediatePropagation();
-
-						currentView.scimoz.beginUndoAction();
-
+					
 						var testString = scimoz.currentPos > 1 ? scimoz.getTextRange((scimoz.currentPos - 2), scimoz.currentPos) : false;
 
 						if (testString && testString === '<s') {
+							e.preventDefault();
+							e.stopPropagation();
+							e.stopImmediatePropagation();
 							if (currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
@@ -401,15 +379,13 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 				case 'JavaScript':
 
 					try {
-						e.preventDefault();
-						e.stopPropagation();
-						e.stopImmediatePropagation();
-
-						currentView.scimoz.beginUndoAction();
-
+						
 						var testString = scimoz.currentPos > 1 ? scimoz.getTextRange((scimoz.currentPos - 2), scimoz.currentPos) : false;
-
+						
 						if (testString && testString === '<c') {
+							e.preventDefault();
+							e.stopPropagation();
+							e.stopImmediatePropagation();
 							if (currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
@@ -433,11 +409,9 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 							} else {
 								self.openDialog();
 							}
-						} else {
-							scimoz.insertText(scimoz.currentPos, 'a');
-							scimoz.gotoPos(scimoz.currentPos + 1);
 						}
-						currentView.scimoz.endUndoAction();
+						
+						return false;
 
 					} catch (e) {
 						alert(e);
@@ -453,15 +427,13 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 				case 'PHP':
 
 					try {
-						e.preventDefault();
-						e.stopPropagation();
-						e.stopImmediatePropagation();
-
-						currentView.scimoz.beginUndoAction();
-
+						
 						var testString = scimoz.currentPos > 1 ? scimoz.getTextRange((scimoz.currentPos - 2), scimoz.currentPos) : false;
 
 						if (testString && testString === '<p') {
+							e.preventDefault();
+							e.stopPropagation();
+							e.stopImmediatePropagation();
 							if (currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
@@ -473,11 +445,9 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 							} else {
 								self.openDialog();
 							}
-						} else {
-							scimoz.insertText(scimoz.currentPos, 'r');
-							scimoz.gotoPos(scimoz.currentPos + 1);
 						}
-						currentView.scimoz.endUndoAction();
+						
+						return false;
 
 					} catch (e) {
 						alert(e);
