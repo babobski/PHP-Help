@@ -24,27 +24,21 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 
 		var scimoz = currentView.scimoz;
 
-		if ( !scimoz || ! scimoz.focus) {
-			return false;
-		}
-		
-		if (scimoz.selections > 1) {
+		if ( !scimoz || ! scimoz.focus || scimoz.selText.length > 0 || scimoz.selections > 1) {
 			return false;
 		}
 		
 		if (ko.keybindings.manager.inPrefixCapture) {
 			return false;
 		}
+		
+		var  koDoc = currentView.document || currentView.koDoc,
+				language = koDoc.language,
+				subLanguage = koDoc.subLanguage,
+				useShortTags = prefs.getCharPref('shorttags');
 
 		// Basic PHP Tags <?
 		if (e.shiftKey && e.which == 191 && !e.ctrlKey && !e.altKey && !e.metaKey) {
-			var koDoc = currentView.document || currentView.koDoc,
-				language = koDoc.language,
-				useShortTags = prefs.getCharPref('shorttags');
-
-			if (scimoz.selText.length > 0) {
-				return false;
-			}
 
 			switch (language) {
 				case 'PHP':
@@ -83,14 +77,7 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 		
 		// Basic echo Tags <?php echo
 		if (!e.shiftKey && e.which == 67 && !e.ctrlKey && !e.altKey && !e.metaKey) {
-			var koDoc = currentView.document || currentView.koDoc,
-				language = koDoc.language,
-				useShortTags = prefs.getCharPref('shorttags');
-
-			if (scimoz.selText.length > 0) {
-				return false;
-			}
-
+			
 			switch (language) {
 				case 'PHP':
 
@@ -130,16 +117,10 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 
 		// IF Statement <if
 		if (!e.shiftKey && e.which == 70 && !e.ctrlKey && !e.altKey && !e.metaKey) {
-			var koDoc = currentView.document || currentView.koDoc,
-				language = koDoc.language,
-				useShortTags = prefs.getCharPref('shorttags');
-
-			if (scimoz.selText.length > 0) {
-				return false;
-			}
-
+			
 			switch (language) {
 				case 'PHP':
+				case 'JavaScript':
 
 					try {
 						e.preventDefault();
@@ -156,7 +137,20 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 							}
 							scimoz.deleteBackNotLine();
 							scimoz.deleteBackNotLine();
-							var snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('if_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('if', 'HTML', 'HTML');
+							var snippet;
+							switch (subLanguage) {
+								case 'HTML':
+								case 'HTML5':
+									snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('if_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('if', 'HTML', 'HTML');
+									break;
+								case 'PHP':
+									snippet = ko.abbrev.findAbbrevSnippet('if', 'PHP', 'PHP');
+									break;
+								case 'JavaScript':
+									snippet = ko.abbrev.findAbbrevSnippet('if', 'JavaScript', 'JavaScript');
+									break;
+							}
+							 
 							if (snippet !== null) {
 								ko.abbrev.insertAbbrevSnippet(snippet);
 							} else {
@@ -177,16 +171,10 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 		
 		// Else if Statement <ei
 		if (!e.shiftKey && e.which == 73 && !e.ctrlKey && !e.altKey && !e.metaKey) {
-			var koDoc = currentView.document || currentView.koDoc,
-				language = koDoc.language,
-				useShortTags = prefs.getCharPref('shorttags');
-
-			if (scimoz.selText.length > 0) {
-				return false;
-			}
 
 			switch (language) {
 				case 'PHP':
+				case 'JavaScript':
 
 					try {
 						e.preventDefault();
@@ -203,7 +191,19 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 							}
 							scimoz.deleteBackNotLine();
 							scimoz.deleteBackNotLine();
-							var snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('elseif_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('elseif', 'HTML', 'HTML');
+							var snippet;
+							switch (subLanguage) {
+								case 'HTML':
+								case 'HTML5':
+									snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('elseif_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('elseif', 'HTML', 'HTML');
+									break;
+								case 'PHP':
+									snippet = ko.abbrev.findAbbrevSnippet('elseif', 'PHP', 'PHP');
+									break;
+								case 'JavaScript':
+									snippet = ko.abbrev.findAbbrevSnippet('elseif', 'JavaScript', 'JavaScript');
+									break;
+							}
 							if (snippet !== null) {
 								ko.abbrev.insertAbbrevSnippet(snippet);
 							} else {
@@ -224,16 +224,10 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 
 		// Else Tag <el / If Esle Statement <il
 		if (!e.shiftKey && e.which == 76 && !e.ctrlKey && !e.altKey && !e.metaKey) {
-			var koDoc = currentView.document || currentView.koDoc,
-				language = koDoc.language,
-				useShortTags = prefs.getCharPref('shorttags');
-
-			if (scimoz.selText.length > 0) {
-				return false;
-			}
-
+			
 			switch (language) {
 				case 'PHP':
+				case 'JavaScript':
 
 					try {
 						e.preventDefault();
@@ -250,7 +244,19 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 							}
 							scimoz.deleteBackNotLine();
 							scimoz.deleteBackNotLine();
-							var snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('else_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('else', 'HTML', 'HTML');
+							var snippet;
+							switch (subLanguage) {
+								case 'HTML':
+								case 'HTML5':
+									snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('else_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('else', 'HTML', 'HTML');
+									break;
+								case 'PHP':
+									snippet = ko.abbrev.findAbbrevSnippet('else', 'PHP', 'PHP');
+									break;
+								case 'JavaScript':
+									snippet = ko.abbrev.findAbbrevSnippet('else', 'JavaScript', 'JavaScript');
+									break;
+							}
 							if (snippet !== null) {
 								ko.abbrev.insertAbbrevSnippet(snippet);
 							} else {
@@ -283,16 +289,10 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 
 		// Foreach <fo
 		if (!e.shiftKey && e.which == 79 && !e.ctrlKey && !e.altKey && !e.metaKey) {
-			var koDoc = currentView.document || currentView.koDoc,
-				language = koDoc.language
-				useShortTags = prefs.getCharPref('shorttags');
-
-			if (scimoz.selText.length > 0) {
-				return false;
-			}
 
 			switch (language) {
 				case 'PHP':
+				case 'JavaScript':
 
 					try {
 						e.preventDefault();
@@ -309,7 +309,19 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 							}
 							scimoz.deleteBackNotLine();
 							scimoz.deleteBackNotLine();
-							var snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('foreach_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('foreach', 'HTML', 'HTML');
+							var snippet;
+							switch (subLanguage) {
+								case 'HTML':
+								case 'HTML5':
+									snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('foreach_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('foreach', 'HTML', 'HTML');
+									break;
+								case 'PHP':
+									snippet = ko.abbrev.findAbbrevSnippet('foreach', 'PHP', 'PHP');
+									break;
+								case 'JavaScript':
+									snippet = ko.abbrev.findAbbrevSnippet('foreach', 'JavaScript', 'JavaScript');
+									break;
+							}
 							if (snippet !== null) {
 								ko.abbrev.insertAbbrevSnippet(snippet);
 							} else {
@@ -330,16 +342,10 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 		
 		// switch <sw
 		if (!e.shiftKey && e.which == 87 && !e.ctrlKey && !e.altKey && !e.metaKey) {
-			var koDoc = currentView.document || currentView.koDoc,
-				language = koDoc.language
-				useShortTags = prefs.getCharPref('shorttags');
-
-			if (scimoz.selText.length > 0) {
-				return false;
-			}
-
+			
 			switch (language) {
 				case 'PHP':
+				case 'JavaScript':
 
 					try {
 						e.preventDefault();
@@ -356,7 +362,19 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 							}
 							scimoz.deleteBackNotLine();
 							scimoz.deleteBackNotLine();
-							var snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('switch_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('switch', 'HTML', 'HTML');
+							var snippet;
+							switch (subLanguage) {
+								case 'HTML':
+								case 'HTML5':
+									snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('switch_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('switch', 'HTML', 'HTML');
+									break;
+								case 'PHP':
+									snippet = ko.abbrev.findAbbrevSnippet('switch', 'PHP', 'PHP');
+									break;
+								case 'JavaScript':
+									snippet = ko.abbrev.findAbbrevSnippet('switch', 'JavaScript', 'JavaScript');
+									break;
+							}
 							if (snippet !== null) {
 								ko.abbrev.insertAbbrevSnippet(snippet);
 							} else {
@@ -377,16 +395,10 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 		
 		// case <ca
 		if (!e.shiftKey && e.which == 65 && !e.ctrlKey && !e.altKey && !e.metaKey) {
-			var koDoc = currentView.document || currentView.koDoc,
-				language = koDoc.language
-				useShortTags = prefs.getCharPref('shorttags');
-
-			if (scimoz.selText.length > 0) {
-				return false;
-			}
-
+			
 			switch (language) {
 				case 'PHP':
+				case 'JavaScript':
 
 					try {
 						e.preventDefault();
@@ -403,7 +415,19 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 							}
 							scimoz.deleteBackNotLine();
 							scimoz.deleteBackNotLine();
-							var snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('case_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('case', 'HTML', 'HTML');
+							var snippet;
+							switch (subLanguage) {
+								case 'HTML':
+								case 'HTML5':
+									snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('case_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('case', 'HTML', 'HTML');
+									break;
+								case 'PHP':
+									snippet = ko.abbrev.findAbbrevSnippet('case', 'PHP', 'PHP');
+									break;
+								case 'JavaScript':
+									snippet = ko.abbrev.findAbbrevSnippet('case', 'JavaScript', 'JavaScript');
+									break;
+							}
 							if (snippet !== null) {
 								ko.abbrev.insertAbbrevSnippet(snippet);
 							} else {
@@ -424,13 +448,6 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 		
 		// print <pr
 		if (!e.shiftKey && e.which == 82 && !e.ctrlKey && !e.altKey && !e.metaKey) {
-			var koDoc = currentView.document || currentView.koDoc,
-				language = koDoc.language
-				useShortTags = prefs.getCharPref('shorttags');
-
-			if (scimoz.selText.length > 0) {
-				return false;
-			}
 
 			switch (language) {
 				case 'PHP':
