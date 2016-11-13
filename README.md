@@ -63,121 +63,78 @@ To insert a else tag, type `<ei` and the following snippet will be inserted:
 
 **<ei will expand to:**  
 *PHP - sublanguage: HTML*
-```php
-<? elseif([Tabstop]): ?>[Tabstop]
 
-```
+![preview](else-if-tag.gif)
+
 *PHP - sublanguage: PHP*  
 *PHP - sublanguage: JavaScript*  
 *JavaScript - sublanguage: JavaScript*
-```php
- else if([Tabstop]) {
-	[Tabstop]
-}
-```
-![preview](else-if-tag.gif)
+
+![preview](else-if-tag-php-js.gif)
 
 ## If else tag - <small>(php/js)</small>
 To insert a if-else tag, type `<il` and the following snippet will be inserted:
 
 **<il will expand to:**  
 *PHP - sublanguage: HTML*
-```php
-<? if([Tabstop]): ?>
-	[Tabstop]
-<? else: ?>
-	[Tabstop]
-<? endif; ?>[Tabstop]
-```
+
+![preview](if-else-tag.gif)
+
 *PHP - sublanguage: PHP*  
 *PHP - sublanguage: JavaScript*  
 *JavaScript - sublanguage: JavaScript*  
-```php
-if ([Tabstop]) {
-	[Tabstop]
-} else {
-	[Tabstop]	
-}
-```
 
-![preview](if-else-tag.gif)
+![preview](if-else-tag-php-js.gif)
 
 ## Foreach tag - <small>(php/js)</small>
 To insert a foreach tag, type `<fo` and the following snippet will be inserted:
 
 **<fo will expand to:**  
 *PHP - sublanguage: HTML*
-```php
-<?php foreach([Tabstop:$pages] as [Tabstop:$page]): ?>
-	[Tabstop]
-<?php endforeach; ?>
-```
+
+![preview](foreach-tag-html.gif)
+
 *PHP - sublanguage: PHP*
-```php
-foreach ($[Tabstop:array] as $[Tabstop:item]) {
-	[Tabstop]
-}
-```
-*PHP - sublanguage: JavaScript*  
-*JavaScript - sublanguage: JavaScript*
-```php
-for ([Tabstop:test]) {
-	[Tabstop://code]
-}
-```
 
 ![preview](foreach-tag.gif)
+
+*PHP - sublanguage: JavaScript*  
+*JavaScript - sublanguage: JavaScript*
+
+![preview](foreach-tag-js.gif)
 
 ## Switch tag - <small>(php/js)</small>
 To insert a switch tag, type `<sw` and the following snippet will be inserted:
 
 **<sw will expand to:**  
 *PHP - sublanguage: HTML*
-```php
-<?php switch([tabstop]:$value):
-	case '[tabstop]': ?>
-		[tabstop]
-	<?php break; ?>
-<?php endswitch; ?>
-```
+
+![preview](switch-tag.gif)
+
 *PHP - sublanguage: PHP*  
 *PHP - sublanguage: JavaScript*  
 *JavaScript - sublanguage: JavaScript*
-```php
-switch ([Tabstop:expression]) {
-	[Tabstop://case]
-}
-```
 
-![preview](switch-tag.gif)
+![preview](switch-tag-php-js.gif)
 
 ## Case tag - <small>(php/js)</small>
 To insert a case tag, type `<ca` and the following snippet will be inserted:
 
 **<ca will expand to:**  
 *PHP - sublanguage: HTML*
-```php
-<?php case '[tabstop]': ?>
-	[tabstop]
-<?php break; ?>
-```
+
+![preview](case-tag.gif)
 
 *PHP - sublanguage: PHP*  
 *PHP - sublanguage: JavaScript*  
 *JavaScript - sublanguage: JavaScript*
-```php
-case '[tabstop]':
-	[tabstop]
- break;
-```
-![preview](case-tag.gif)
+
+![preview](case-tag-php-js.gif)
 
 ## Print tag - <small>(php)</small>
 To insert a print tag, type `<pr` and the following snippet will be inserted:
 
 **<pr will expand to:**  
 *PHP - sublanguage: HTML*
-```php
-<?php echo '<pre>' . print_r([tabstop], true) . '</pre>'; ?>
-```
+
 ![preview](print-tag.gif)
