@@ -38,25 +38,21 @@ To instert a echo php tag, type `<ec` and the following snippet will be inserted
 To insert a if tag, type `<if` and the following snippet will be inserted:
 
 **<if will expand to:**  
-*PHP - sublanguage: HTML*
+<small>*PHP - sublanguage: HTML*</small>
 ```php
 <?php if([Tabstop]): ?>
 	[Tabstop]
 <?php endif; ?>
 ```
-*PHP - sublanguage: PHP*
-```php
-if ([Tabstop]) {
-	[Tabstop]
-}
-```
+<small>*PHP - sublanguage: PHP*  
 *PHP - sublanguage: JavaScript*  
-*JavaScript - sublanguage: JavaScript*
+*JavaScript - sublanguage: JavaScript*</small>
 ```php
 if ([Tabstop]) {
 	[Tabstop]
 }
 ```
+
 ![preview](if-tag.gif)
 
 ### else tag - <small>(php/js)</small>
