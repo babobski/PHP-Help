@@ -20,18 +20,14 @@ Also is there support for short-tags, this can be enabled trough the settings.
 To insert a default php tag, type `<?` and the following snippet will be inserted:
 
 **<? will expand to:**
-```php
-<?php [Tabstop] ?>
-```
+
 ![preview](php-tag.gif)
 
 ## echo tag - <small>(php)</small>
 To instert a echo php tag, type `<ec` and the following snippet will be inserted:
 
 **<ec will expand to:**
-```php
-<?php echo [Tabstop] ?>
-```
+
 ![preview](echo-tag.gif)
 
 ## If tag - <small>(php/js)</small>
@@ -39,22 +35,12 @@ To insert a if tag, type `<if` and the following snippet will be inserted:
 
 **<if will expand to:**  
 *PHP - sublanguage: HTML*
-```php
-<?php if([Tabstop]): ?>
-	[Tabstop]
-<?php endif; ?>
-```
 
 ![preview](if-tag.gif)
 
 *PHP - sublanguage: PHP*  
 *PHP - sublanguage: JavaScript*  
 *JavaScript - sublanguage: JavaScript*
-```php
-if ([Tabstop]) {
-	[Tabstop]
-}
-```
 
 ![preview](if-tag-php-js.gif)
 
@@ -63,19 +49,14 @@ To insert a else tag, type `<el` and the following snippet will be inserted:
 
 **<el will expand to:**  
 *PHP - sublanguage: HTML*
-```php 
-<?php else: ?>
-```
+
+![preview](esle-tag.gif)
+
 *PHP - sublanguage: PHP*  
 *PHP - sublanguage: JavaScript*  
 *JavaScript - sublanguage: JavaScript*
-```php
- else {
-	[Tabstop]
-}
 
-```
-![preview](esle-tag.gif)
+![preview](esle-tag-php-js.gif)
 
 ## else if tags - <small>(php/js)</small>
 To insert a else tag, type `<ei` and the following snippet will be inserted:
