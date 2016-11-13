@@ -254,7 +254,19 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 							}
 							scimoz.deleteBackNotLine();
 							scimoz.deleteBackNotLine();
-							var snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('ifelse_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('ifelse', 'HTML', 'HTML');
+							var snippet;
+							switch (subLanguage) {
+								case 'HTML':
+								case 'HTML5':
+									snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('ifelse_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('ifelse', 'HTML', 'HTML');
+									break;
+								case 'PHP':
+									snippet = ko.abbrev.findAbbrevSnippet('ifelse', 'PHP', 'PHP');
+									break;
+								case 'JavaScript':
+									snippet = ko.abbrev.findAbbrevSnippet('ifelse', 'JavaScript', 'JavaScript');
+									break;
+							}
 							if (snippet !== null) {
 								ko.abbrev.insertAbbrevSnippet(snippet);
 							} else {
