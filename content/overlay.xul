@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <overlay id="PHPTags" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-	<script type="application/x-javascript" src="chrome://PHPTags/content/overlay.js" />
+	<script type="application/x-javascript" src="chrome://STA/content/overlay.js" />
 	
-	<commandset id="allcommands">
-		<command id="Tasks:OpenCheatsheet" oncommand="extensions.PHPTags.openCheatsheet();"/>
-	</commandset>
-
-	<menupopup id="popup_tools">
-		<menu id="menu_PHPTags" label="PHP Tags">
-		<menupopup id="menu_tags_popup"> 
-			<menuitem id="menu_tags_file"
-					label="Open Cheatsheet"
-					observes="Tasks:OpenCheatsheet"
-					class="menu-iconic-wide" />
-		</menupopup>
-		</menu>
-	</menupopup>
+	<ko-pane id="workspace_right_area">
+	<browser type="ko-widget" id="STAViewbox" label="S.T.A. CheatSheet"
+			 position="10" insertbefore="codebrowserviewbox"
+			 tab_oncommand=""
+			 tab_onfocus=""
+			 icon="koicon://ko-svg/chrome/icomoon/skin/book2.svg"
+			 src="chrome://STA/content/panel.xul"/>
+	</ko-pane>
 	
 </overlay>
 

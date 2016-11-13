@@ -1,5 +1,5 @@
-content PHPTags content/
-overlay chrome://komodo/content/komodo.xul chrome://PHPTags/content/overlay.xul
-overlay chrome://komodo/content/commandsOverlay.xul chrome://PHPTags/content/commandsOverlay.xul
-#overlay chrome://komodo/content/pref/pref-html.xul chrome://PHPTags/content/pref-overlay.xul
-skin PHPTags classic/1.0 skin/
+content STA content/
+overlay chrome://komodo/content/komodo.xul chrome://STA/content/overlay.xul
+overlay chrome://komodo/content/commandsOverlay.xul chrome://STA/content/commandsOverlay.xul
+#overlay chrome://komodo/content/pref/pref-html.xul chrome://STA/content/pref-overlay.xul
+skin STA classic/1.0 skin/

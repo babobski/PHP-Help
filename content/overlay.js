@@ -2,14 +2,14 @@
  * Namespaces
  */
 if (typeof(extensions) === 'undefined') extensions = {};
-if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
+if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 	version: '1.0'
 };
 
 (function() {
 	var self = this,
 		prefs = Components.classes["@mozilla.org/preferences-service;1"]
-		.getService(Components.interfaces.nsIPrefService).getBranch("extensions.PHPTags."),
+		.getService(Components.interfaces.nsIPrefService).getBranch("extensions.STA."),
 		editor_pane = ko.views.manager.topView;
 	
 
@@ -474,14 +474,8 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 			self: self,
 			ko: ko,
 		}
-		window.openDialog("chrome://PHPTags/content/getSnippets.xul","downloadSnippets",
-					"chrome",data);
-	}
-	
-	this.openCheatsheet = function() {
-		var features = 'chrome,alwaysRaised=yes,centerscreen=true,resizable=yes';
-		
-		window.open('chrome://PHPTags/content/cheatsheet.xul', 'cheatsheet', features);
+		window.openDialog("chrome://STA/content/getSnippets.xul","downloadSnippets",
+					"chrome,centerscreen,modal",data);
 	}
 	
 	this.openSnippetsPage = function(){
@@ -490,4 +484,4 @@ if (typeof(extensions.PHPTags) === 'undefined') extensions.PHPTags = {
 
 	editor_pane.addEventListener('keydown', self._autoCompleteTag, true);
 
-}).apply(extensions.PHPTags);
+}).apply(extensions.STA);

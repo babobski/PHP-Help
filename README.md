@@ -34,13 +34,13 @@ To instert a echo php tag, type `<ec` and the following snippet will be inserted
 To insert a if tag, type `<if` and the following snippet will be inserted:
 
 **<if will expand to:**  
-*PHP - sublanguage: HTML*
+*PHP - sub-language: HTML*
 
 ![preview](if-tag.gif)
 
-*PHP - sublanguage: PHP*  
-*PHP - sublanguage: JavaScript*  
-*JavaScript - sublanguage: JavaScript*
+*PHP - sub-language: PHP*  
+*PHP - sub-language: JavaScript*  
+*JavaScript - sub-language: JavaScript*
 
 ![preview](if-tag-php-js.gif)
 
@@ -48,13 +48,13 @@ To insert a if tag, type `<if` and the following snippet will be inserted:
 To insert a else tag, type `<el` and the following snippet will be inserted:
 
 **<el will expand to:**  
-*PHP - sublanguage: HTML*
+*PHP - sub-language: HTML*
 
 ![preview](esle-tag.gif)
 
-*PHP - sublanguage: PHP*  
-*PHP - sublanguage: JavaScript*  
-*JavaScript - sublanguage: JavaScript*
+*PHP - sub-language: PHP*  
+*PHP - sub-language: JavaScript*  
+*JavaScript - sub-language: JavaScript*
 
 ![preview](esle-tag-php-js.gif)
 
@@ -62,13 +62,13 @@ To insert a else tag, type `<el` and the following snippet will be inserted:
 To insert a else tag, type `<ei` and the following snippet will be inserted:
 
 **<ei will expand to:**  
-*PHP - sublanguage: HTML*
+*PHP - sub-language: HTML*
 
 ![preview](else-if-tag.gif)
 
-*PHP - sublanguage: PHP*  
-*PHP - sublanguage: JavaScript*  
-*JavaScript - sublanguage: JavaScript*
+*PHP - sub-language: PHP*  
+*PHP - sub-language: JavaScript*  
+*JavaScript - sub-language: JavaScript*
 
 ![preview](else-if-tag-php-js.gif)
 
@@ -76,13 +76,13 @@ To insert a else tag, type `<ei` and the following snippet will be inserted:
 To insert a if-else tag, type `<il` and the following snippet will be inserted:
 
 **<il will expand to:**  
-*PHP - sublanguage: HTML*
+*PHP - sub-language: HTML*
 
 ![preview](if-else-tag.gif)
 
-*PHP - sublanguage: PHP*  
-*PHP - sublanguage: JavaScript*  
-*JavaScript - sublanguage: JavaScript*  
+*PHP - sub-language: PHP*  
+*PHP - sub-language: JavaScript*  
+*JavaScript - sub-language: JavaScript*  
 
 ![preview](if-else-tag-php-js.gif)
 
@@ -90,16 +90,16 @@ To insert a if-else tag, type `<il` and the following snippet will be inserted:
 To insert a foreach tag, type `<fo` and the following snippet will be inserted:
 
 **<fo will expand to:**  
-*PHP - sublanguage: HTML*
+*PHP - sub-language: HTML*
 
 ![preview](foreach-tag-html.gif)
 
-*PHP - sublanguage: PHP*
+*PHP - sub-language: PHP*
 
 ![preview](foreach-tag.gif)
 
-*PHP - sublanguage: JavaScript*  
-*JavaScript - sublanguage: JavaScript*
+*PHP - sub-language: JavaScript*  
+*JavaScript - sub-language: JavaScript*
 
 ![preview](foreach-tag-js.gif)
 
@@ -107,13 +107,13 @@ To insert a foreach tag, type `<fo` and the following snippet will be inserted:
 To insert a switch tag, type `<sw` and the following snippet will be inserted:
 
 **<sw will expand to:**  
-*PHP - sublanguage: HTML*
+*PHP - sub-language: HTML*
 
 ![preview](switch-tag.gif)
 
-*PHP - sublanguage: PHP*  
-*PHP - sublanguage: JavaScript*  
-*JavaScript - sublanguage: JavaScript*
+*PHP - sub-language: PHP*  
+*PHP - sub-language: JavaScript*  
+*JavaScript - sub-language: JavaScript*
 
 ![preview](switch-tag-php-js.gif)
 
@@ -121,13 +121,13 @@ To insert a switch tag, type `<sw` and the following snippet will be inserted:
 To insert a case tag, type `<ca` and the following snippet will be inserted:
 
 **<ca will expand to:**  
-*PHP - sublanguage: HTML*
+*PHP - sub-language: HTML*
 
 ![preview](case-tag.gif)
 
-*PHP - sublanguage: PHP*  
-*PHP - sublanguage: JavaScript*  
-*JavaScript - sublanguage: JavaScript*
+*PHP - sub-language: PHP*  
+*PHP - sub-language: JavaScript*  
+*JavaScript - sub-language: JavaScript*
 
 ![preview](case-tag-php-js.gif)
 
@@ -135,6 +135,9 @@ To insert a case tag, type `<ca` and the following snippet will be inserted:
 To insert a print tag, type `<pr` and the following snippet will be inserted:
 
 **<pr will expand to:**  
-*PHP - sublanguage: HTML*
+*PHP - sub-language: HTML*
 
 ![preview](print-tag.gif)
+
+
+# CheatSheet

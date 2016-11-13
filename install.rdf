@@ -2,16 +2,16 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	 xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	<Description about="urn:mozilla:install-manifest">
-<em:unpack>true</em:unpack>
-		<em:id>PHPTags@babobski.com</em:id>
-		<em:name>PHP Tags</em:name>
+	<em:unpack>true</em:unpack>
+		<em:id>STA@babobski.com</em:id>
+		<em:name>Smart Tags Auto-completion</em:name>
 		<em:version>1.0</em:version>
-		<em:description>PHP Tags autocompletion</em:description>
+		<em:description>Get more done with less typing.</em:description>
 		<em:creator>Bob de Haas</em:creator>
 		<em:homepageURL></em:homepageURL>
 		<em:type>2</em:type> <!-- type=extension -->
 
-		<em:optionsURL>chrome://PHPTags/content/pref-overlay.xul</em:optionsURL>
+		<em:optionsURL>chrome://STA/content/pref-overlay.xul</em:optionsURL>
 
 		<em:targetApplication>
 			<Description>
