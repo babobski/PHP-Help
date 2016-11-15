@@ -370,11 +370,9 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 							} else {
 								self.openDialog();
 							}
-						} else {
-							scimoz.insertText(scimoz.currentPos, 'w');
-							scimoz.gotoPos(scimoz.currentPos + 1);
 						}
-						currentView.scimoz.endUndoAction();
+						
+						return false;
 
 					} catch (e) {
 						alert(e);
