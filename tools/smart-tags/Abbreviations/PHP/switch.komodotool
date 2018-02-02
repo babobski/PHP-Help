@@ -1,0 +1,16 @@
+{
+  "keyboard_shortcut": "", 
+  "name": "switch", 
+  "value": [
+    "switch [[%soft:(]][[%tabstop:expression]][[%soft:) {]]", 
+    "\t[[%tabstop://case]]", 
+    "}!@#_currentPos!@#_anchor"
+  ], 
+  "set_selection": "false", 
+  "version": "1.0.12", 
+  "auto_abbreviation": "false", 
+  "indent_relative": "true", 
+  "type": "snippet", 
+  "treat_as_ejs": "false", 
+  "icon": "koicon://ko-svg/chrome/icomoon/skin/code.svg"
+}

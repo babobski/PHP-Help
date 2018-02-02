@@ -3,7 +3,7 @@
  */
 if (typeof(extensions) === 'undefined') extensions = {};
 if (typeof(extensions.STA) === 'undefined') extensions.STA = {
-	version: '1.0'
+	version: '1.1'
 };
 
 (function() {
@@ -50,7 +50,7 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 							e.stopPropagation();
 							e.stopImmediatePropagation();
 							currentView.scimoz.beginUndoAction();
-							if (currentView.scintilla.autocomplete.active) {
+							if (currentView.scintilla.autocomplete && currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
 							if (useShortTags === 'yes') {
@@ -86,7 +86,7 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 							e.preventDefault();
 							e.stopPropagation();
 							e.stopImmediatePropagation();
-							if (currentView.scintilla.autocomplete.active) {
+							if (currentView.scintilla.autocomplete && currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
 							scimoz.deleteBackNotLine();
@@ -123,7 +123,7 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 							e.preventDefault();
 							e.stopPropagation();
 							e.stopImmediatePropagation();
-							if (currentView.scintilla.autocomplete.active) {
+							if (currentView.scintilla.autocomplete && currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
 							scimoz.deleteBackNotLine();
@@ -173,7 +173,7 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 							e.preventDefault();
 							e.stopPropagation();
 							e.stopImmediatePropagation();
-							if (currentView.scintilla.autocomplete.active) {
+							if (currentView.scintilla.autocomplete && currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
 							scimoz.deleteBackNotLine();
@@ -222,7 +222,7 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 							e.preventDefault();
 							e.stopPropagation();
 							e.stopImmediatePropagation();
-							if (currentView.scintilla.autocomplete.active) {
+							if (currentView.scintilla.autocomplete && currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
 							scimoz.deleteBackNotLine();
@@ -249,7 +249,7 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 							e.preventDefault();
 							e.stopPropagation();
 							e.stopImmediatePropagation();
-							if (currentView.scintilla.autocomplete.active) {
+							if (currentView.scintilla.autocomplete && currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
 							scimoz.deleteBackNotLine();
@@ -298,7 +298,7 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 							e.preventDefault();
 							e.stopPropagation();
 							e.stopImmediatePropagation();
-							if (currentView.scintilla.autocomplete.active) {
+							if (currentView.scintilla.autocomplete && currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
 							scimoz.deleteBackNotLine();
@@ -347,7 +347,7 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 							e.preventDefault();
 							e.stopPropagation();
 							e.stopImmediatePropagation();
-							if (currentView.scintilla.autocomplete.active) {
+							if (currentView.scintilla.autocomplete && currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
 							scimoz.deleteBackNotLine();
@@ -396,7 +396,7 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 							e.preventDefault();
 							e.stopPropagation();
 							e.stopImmediatePropagation();
-							if (currentView.scintilla.autocomplete.active) {
+							if (currentView.scintilla.autocomplete && currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
 							scimoz.deleteBackNotLine();
@@ -444,7 +444,7 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 							e.preventDefault();
 							e.stopPropagation();
 							e.stopImmediatePropagation();
-							if (currentView.scintilla.autocomplete.active) {
+							if (currentView.scintilla.autocomplete && currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
 							scimoz.deleteBackNotLine();

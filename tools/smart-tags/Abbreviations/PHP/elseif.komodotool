@@ -1,0 +1,16 @@
+{
+  "keyboard_shortcut": "", 
+  "name": "elseif", 
+  "value": [
+    " elseif([[%tabstop:]]) {", 
+    "\t[[%tabstop:]]", 
+    "}!@#_currentPos!@#_anchor"
+  ], 
+  "set_selection": "false", 
+  "version": "1.0.12", 
+  "indent_relative": "true", 
+  "icon": "koicon://ko-svg/chrome/icomoon/skin/code.svg", 
+  "type": "snippet", 
+  "treat_as_ejs": "false", 
+  "auto_abbreviation": "false"
+}

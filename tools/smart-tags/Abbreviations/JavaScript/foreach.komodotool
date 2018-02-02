@@ -1,0 +1,16 @@
+{
+  "keyboard_shortcut": "", 
+  "name": "foreach", 
+  "value": [
+    "for [[%soft:(]][[%tabstop:test]][[%soft:) {]]", 
+    "\t[[%tabstop://code]]", 
+    "}!@#_currentPos!@#_anchor"
+  ], 
+  "set_selection": "false", 
+  "version": "1.0.12", 
+  "auto_abbreviation": "false", 
+  "treat_as_ejs": "false", 
+  "type": "snippet", 
+  "indent_relative": "true", 
+  "icon": "koicon://ko-svg/chrome/icomoon/skin/code.svg"
+}

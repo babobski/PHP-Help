@@ -3,3 +3,4 @@ overlay chrome://komodo/content/komodo.xul chrome://STA/content/overlay.xul
 overlay chrome://komodo/content/commandsOverlay.xul chrome://STA/content/commandsOverlay.xul
 #overlay chrome://komodo/content/pref/pref-html.xul chrome://STA/content/pref-overlay.xul
 skin STA classic/1.0 skin/
+category  toolbox  STA@babobski.com  1
