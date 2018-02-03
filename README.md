@@ -3,14 +3,8 @@ Get more done with less typing, emmet like auto completion for PHP and JavaScrip
 Quickly create if else statements, foreach loops and more.
 
 ## Installation
- * Installing required snippets
- * Installing addon
+ * Install addon
  * Configure Short Tags (optional)
-
-**Installing required snippets**  
-For the autocompletion to work, you need to install snippets.   
-You can adjust the snippets to needs (Indentation, etc.).    
-The snippets can be found [here](https://github.com/babobski/PHP-Tags-Snippets).
 
 # Auto-completions
 This addon will provide auto completion for common php tags.  
@@ -141,3 +135,6 @@ To insert a print tag, type `<pr` and the following snippet will be inserted:
 
 
 # CheatSheet
+In the right side pane you will find a cheat sheet so you can easily check witch abbreviations are available.
+
+![sidepane](sidepane.jpg)
