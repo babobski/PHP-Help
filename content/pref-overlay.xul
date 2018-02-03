@@ -6,19 +6,26 @@
 <prefwindow id="STA-prefs"
 	 title="Smart Tags Auto-completion"
 	 xmlns:html="http://www.w3.org/1999/xhtml"
-	 width="300"
-	 height="200"
+	 hidechrome="true"
+	 width="330"
+	 height="122"
 	 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
 	<prefpane id="STA-pane" label="Smart Tags Auto-completion">
 		<preferences>
 			<preference id="pref_shorttags" name="extensions.STA.shorttags" type="string"/>
 		</preferences>
-		<html:h3>
-			Use php short-tags
-		</html:h3>
+		
+		<titlebar id="STATitleBar" height="30" width="100%"  style="background: transparent; z-index: 888;">
+			<label flex="1" style="text-align: center; padding: 7px 0; pointer-events: none;">
+				Smart Tag Auto-completion
+			</label>
+		</titlebar>
 		  
-		<hbox align="center">
+		<hbox align="center" style="padding: 7px;">
+			<description>
+				Use php short-tags
+			</description>
 			<menulist id="shorttags" preference="pref_shorttags" label="Use php short tags">
 				<menupopup>
 					<menuitem value="yes" label="Yes, use php short-tags"/>
