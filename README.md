@@ -12,7 +12,7 @@ Also is there support for short-tags, this can be enabled trough the settings.
 
 # Enabling and disabling tags  
 In the prefernce menu you can enable and disable tags.  
-This can be useful if you have a conflict wiath a html tag (like iframe conflicts with the <if if tag)
+This can be useful if you have a conflict with a html tag (like iframe conflicts with the <if if tag)
 
 ## PHP tag - <small>(php)</small>
 To insert a default php tag, type `<?` and the following snippet will be inserted:
