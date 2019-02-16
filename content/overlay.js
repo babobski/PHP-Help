@@ -3,7 +3,7 @@
  */
 if (typeof(extensions) === 'undefined') extensions = {};
 if (typeof(extensions.STA) === 'undefined') extensions.STA = {
-	version: '1.1'
+	version: '2.0'
 };
 
 (function() {
