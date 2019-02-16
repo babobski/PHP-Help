@@ -39,6 +39,13 @@
 			</treeitem>
 			<treeitem>
 				<treerow>
+				<treecell label="&lt;il"/>
+				<treecell label="If-Else tag"/>
+				<treecell label="php - js"/>
+				</treerow>
+			</treeitem>
+			<treeitem>
+				<treerow>
 				<treecell label="&lt;el"/>
 				<treecell label="Else tag"/>
 				<treecell label="php - js"/>
@@ -48,13 +55,6 @@
 				<treerow>
 				<treecell label="&lt;ei"/>
 				<treecell label="Else if tag"/>
-				<treecell label="php - js"/>
-				</treerow>
-			</treeitem>
-			<treeitem>
-				<treerow>
-				<treecell label="&lt;il"/>
-				<treecell label="If-Else tag"/>
 				<treecell label="php - js"/>
 				</treerow>
 			</treeitem>

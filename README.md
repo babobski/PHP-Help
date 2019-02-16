@@ -10,6 +10,10 @@ Quickly create if else statements, foreach loops and more.
 This addon will provide auto completion for common php tags.  
 Also is there support for short-tags, this can be enabled trough the settings.
 
+# Enabling and disabling tags  
+In the prefernce menu you can enable and disable tags.  
+This can be useful if you have a conflict wiath a html tag (like iframe conflicts with the <if if tag)
+
 ## PHP tag - <small>(php)</small>
 To insert a default php tag, type `<?` and the following snippet will be inserted:
 
@@ -132,7 +136,6 @@ To insert a print tag, type `<pr` and the following snippet will be inserted:
 *PHP - sub-language: HTML*
 
 ![preview](print-tag.gif)
-
 
 # CheatSheet
 In the right side pane you will find a cheat sheet so you can easily check witch abbreviations are available.
