@@ -39,7 +39,12 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 
 		// Basic PHP Tags <?
 		if (e.shiftKey && e.which == 191 && !e.ctrlKey && !e.altKey && !e.metaKey) {
-
+			var useBasic = prefs.getBoolPref('tag_basic');
+			
+			if (!useBasic) {
+				return;
+			}
+			
 			switch (language) {
 				case 'PHP':
 
@@ -74,6 +79,11 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 		
 		// Basic echo Tags <?php echo
 		if (!e.shiftKey && e.which == 67 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+			var useEcho = prefs.getBoolPref('tag_echo');
+			
+			if (!useEcho) {
+				return;
+			}
 			
 			switch (language) {
 				case 'PHP':
@@ -110,6 +120,11 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 
 		// IF Statement <if
 		if (!e.shiftKey && e.which == 70 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+			var useIf = prefs.getBoolPref('tag_if');
+			
+			if (!useIf) {
+				return;
+			}
 			
 			switch (language) {
 				case 'PHP':
@@ -160,6 +175,11 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 		
 		// Else if Statement <ei
 		if (!e.shiftKey && e.which == 73 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+			var useElseif = prefs.getBoolPref('tag_elseif');
+			
+			if (!useElseif) {
+				return;
+			}
 
 			switch (language) {
 				case 'PHP':
@@ -219,6 +239,11 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 						var testString = scimoz.currentPos > 1 ? scimoz.getTextRange((scimoz.currentPos - 2), scimoz.currentPos) : false;
 
 						if (testString && testString === '<e') {
+							var useElse = prefs.getBoolPref('tag_else');
+			
+							if (!useElse) {
+								return;
+							}
 							e.preventDefault();
 							e.stopPropagation();
 							e.stopImmediatePropagation();
@@ -246,6 +271,11 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 								self.openDialog();
 							}
 						} else if (testString && testString === '<i') {
+							var useIfelse = prefs.getBoolPref('tag_ifelse');
+			
+							if (!useIfelse) {
+								return;
+							}
 							e.preventDefault();
 							e.stopPropagation();
 							e.stopImmediatePropagation();
@@ -285,6 +315,11 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 
 		// Foreach <fo
 		if (!e.shiftKey && e.which == 79 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+			var useFor = prefs.getBoolPref('tag_for');
+			
+			if (!useFor) {
+				return;
+			}
 
 			switch (language) {
 				case 'PHP':
@@ -334,6 +369,11 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 		
 		// switch <sw
 		if (!e.shiftKey && e.which == 87 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+			var useSwitch = prefs.getBoolPref('tag_switch');
+			
+			if (!useSwitch) {
+				return;
+			}
 			
 			switch (language) {
 				case 'PHP':
@@ -383,6 +423,11 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 		
 		// case <ca
 		if (!e.shiftKey && e.which == 65 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+			var useCase = prefs.getBoolPref('tag_case');
+			
+			if (!useCase) {
+				return;
+			}
 			
 			switch (language) {
 				case 'PHP':
@@ -432,6 +477,11 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 		
 		// print <pr
 		if (!e.shiftKey && e.which == 82 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+			var usePrint = prefs.getBoolPref('tag_print');
+			
+			if (!usePrint) {
+				return;
+			}
 
 			switch (language) {
 				case 'PHP':
@@ -444,12 +494,26 @@ if (typeof(extensions.STA) === 'undefined') extensions.STA = {
 							e.preventDefault();
 							e.stopPropagation();
 							e.stopImmediatePropagation();
+							
+							var snippet = null;
+							
 							if (currentView.scintilla.autocomplete && currentView.scintilla.autocomplete.active) {
 								currentView.scintilla.autocomplete.close();
 							}
+							
 							scimoz.deleteBackNotLine();
 							scimoz.deleteBackNotLine();
-							var snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('print_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('print', 'HTML', 'HTML');
+							
+							switch (subLanguage) {
+								case 'HTML':
+								case 'HTML5':
+									snippet = useShortTags === 'yes' ? ko.abbrev.findAbbrevSnippet('print_short', 'HTML', 'HTML') : ko.abbrev.findAbbrevSnippet('print', 'HTML', 'HTML');
+									break;
+								case 'PHP':
+									snippet = ko.abbrev.findAbbrevSnippet('print', 'PHP', 'PHP');
+									break;
+							}
+							 
 							if (snippet !== null) {
 								ko.abbrev.insertAbbrevSnippet(snippet);
 							} else {

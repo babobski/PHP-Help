@@ -8,12 +8,22 @@
 	 xmlns:html="http://www.w3.org/1999/xhtml"
 	 hidechrome="true"
 	 width="330"
-	 height="122"
+	 height="400"
 	 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
 	<prefpane id="STA-pane" label="Smart Tags Auto-completion">
 		<preferences>
 			<preference id="pref_shorttags" name="extensions.STA.shorttags" type="string"/>
+			<preference id="pref_tag_basic" name="extensions.STA.tag_basic" type="bool"/>
+			<preference id="pref_tag_echo" name="extensions.STA.tag_echo" type="bool"/>
+			<preference id="pref_tag_if" name="extensions.STA.tag_if" type="bool"/>
+			<preference id="pref_tag_ifelse" name="extensions.STA.tag_ifelse" type="bool"/>
+			<preference id="pref_tag_else" name="extensions.STA.tag_else" type="bool"/>
+			<preference id="pref_tag_elseif" name="extensions.STA.tag_elseif" type="bool"/>
+			<preference id="pref_tag_for" name="extensions.STA.tag_for" type="bool"/>
+			<preference id="pref_tag_switch" name="extensions.STA.tag_switch" type="bool"/>
+			<preference id="pref_tag_case" name="extensions.STA.tag_case" type="bool"/>
+			<preference id="pref_tag_print" name="extensions.STA.tag_print" type="bool"/>
 		</preferences>
 		
 		<titlebar id="STATitleBar" height="30" width="100%"  style="background: transparent; z-index: 888;">
@@ -32,6 +42,61 @@
 					<menuitem value="no" label="No, dont use php short-tags"/>
 				</menupopup>
 			</menulist>
+		</hbox>
+		<hbox align="center" style="padding: 7px;">
+			<html:h3>Enable/disable tags</html:h3>
+		</hbox>
+		<hbox align="center" style="padding: 7px;">
+			<groupbox flex="1">
+				<grid>
+					<columns>
+						<column flex="2" />
+						<column flex="1" />
+					</columns>
+					<rows>
+						<row>
+							<label value="Basic PHP tag" />
+							<checkbox label="Enable tag" preference="pref_tag_basic" />
+						</row>
+						<row>
+							<label value="Echo tag" />
+							<checkbox label="Enable tag" preference="pref_tag_echo" />
+						</row>
+						<row>
+							<label value="If tag" />
+							<checkbox label="Enable tag" preference="pref_tag_if" />
+						</row>
+						<row>
+							<label value="If else tag" />
+							<checkbox label="Enable tag" preference="pref_tag_ifelse" />
+						</row>
+						<row>
+							<label value="Else tag" />
+							<checkbox label="Enable tag" preference="pref_tag_else" />
+						</row>
+						<row>
+							<label value="Else if tag" />
+							<checkbox label="Enable tag" preference="pref_tag_elseif" />
+						</row>
+						<row>
+							<label value="Foreach tag" />
+							<checkbox label="Enable tag" preference="pref_tag_for" />
+						</row>
+						<row>
+							<label value="Switch tag" />
+							<checkbox label="Enable tag" preference="pref_tag_switch" />
+						</row>
+						<row>
+							<label value="Case tag" />
+							<checkbox label="Enable tag" preference="pref_tag_case" />
+						</row>
+						<row>
+							<label value="Print tag" />
+							<checkbox label="Enable tag" preference="pref_tag_print" />
+						</row>
+					</rows>
+				</grid>
+			</groupbox>
 		</hbox>
 	</prefpane>
 

@@ -1,0 +1,15 @@
+{
+  "keyboard_shortcut": "", 
+  "name": "print", 
+  "language": "HTML", 
+  "value": [
+    "echo '<pre>' . print_r(, true) . '</pre>';!@#_currentPos!@#_anchor"
+  ], 
+  "set_selection": "true", 
+  "version": "1.1.5", 
+  "indent_relative": "true", 
+  "icon": "koicon://ko-svg/chrome/icomoon/skin/code.svg", 
+  "type": "snippet", 
+  "treat_as_ejs": "false", 
+  "auto_abbreviation": "false"
+}
